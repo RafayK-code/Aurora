@@ -1,9 +1,18 @@
 #ifndef _NUMBER_EXPR_AST_H
 #define _NUMBER_EXPR_AST_H
 
-class NumberExprAST
+#include "ExprAST.h"
+
+class NumberExprAST : public ExprAST
 {
-public: 
+public:
+    NumberExprAST(double val)
+        : val(val)
+    {
+    }
+
+private:
+    double val;
 };
 
 #endif

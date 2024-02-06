@@ -17,16 +17,18 @@ class Lexer
 {
 public:
     static int gettok();
+    static int get_next_token();
+    static int get_cur_token();
 
     static const std::string& get_identifier();
-    static void set_identifier(const std::string& id);
 
     static double get_number();
-    static void set_number(double num);
     
 private:
     static std::string id_str;
     static double num_val;
+
+    static int cur_tok;
 };
 
 #endif

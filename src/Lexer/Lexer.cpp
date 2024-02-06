@@ -5,6 +5,7 @@
 
 std::string Lexer::id_str = "";
 double Lexer::num_val = 0;
+int Lexer::cur_tok = 0;
 
 int Lexer::gettok()
 {
@@ -63,22 +64,22 @@ int Lexer::gettok()
     return this_char;
 }
 
+int Lexer::get_next_token()
+{
+    return cur_tok = gettok();
+}
+
+int Lexer::get_cur_token()
+{
+    return cur_tok;
+}
+
 const std::string& Lexer::get_identifier()
 {
     return id_str;
 }
 
-void Lexer::set_identifier(const std::string& id)
-{
-    id_str = id;
-}
-
 double Lexer::get_number()
 {
     return num_val;
-}
-
-void Lexer::set_number(double num)
-{
-    num_val = num;
 }
